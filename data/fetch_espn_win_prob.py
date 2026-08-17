@@ -130,13 +130,27 @@ def fetch_play_clock_map(game_id: str) -> dict[str, int]:
 def fetch_win_probability(game_id: str) -> list[dict] | None:
     """Fetch the full in-game win probability series with clock data."""
     try:
-        resp = requests.get(PROBABILITIES_URL.format(game_id=game_id), timeout=30)
-        if resp.status_code in (400, 404):
-            return None
-        resp.raise_for_status()
-        data = resp.json()
+        # Paginate to get all probability items
+        items = []
+        page = 1
+        while True:
+            url = PROBABILITIES_URL.format(game_id=game_id) + f"&page={page}"
+            resp = requests.get(url, timeout=30)
+            if resp.status_code in (400, 404):
+                return None
+            resp.raise_for_status()
+            data = resp.json()
 
-        items = data.get("items", [])
+            page_items = data.get("items", [])
+            if not page_items:
+                break
+            items.extend(page_items)
+
+            if page >= data.get("pageCount", 1):
+                break
+            page += 1
+            time.sleep(0.2)
+
         if not items:
             return None
 

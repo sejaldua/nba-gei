@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Game } from "@/lib/types";
+import { BASE_PATH } from "@/lib/basePath";
 import SeasonSelector from "@/components/SeasonSelector";
 import TopGamesTable from "@/components/TopGamesTable";
 
@@ -12,7 +13,7 @@ export default function GamesPage() {
   const [limit, setLimit] = useState(50);
 
   useEffect(() => {
-    fetch("/data/gei_by_game.json")
+    fetch(`${BASE_PATH}/data/gei_by_game.json`)
       .then((r) => r.json())
       .then(setGames);
   }, []);

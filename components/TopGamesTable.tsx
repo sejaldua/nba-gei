@@ -2,7 +2,6 @@
 
 import { Fragment, useState } from "react";
 import { Game } from "@/lib/types";
-import { GEI_CATEGORIES } from "@/lib/constants";
 import WinProbChart from "./WinProbChart";
 
 interface Props {
@@ -36,10 +35,6 @@ export default function TopGamesTable({ games }: Props) {
       setSortBy(col);
       setSortDir(col === "date" || col === "matchup" ? "asc" : "desc");
     }
-  };
-
-  const getCategoryColor = (category: string) => {
-    return GEI_CATEGORIES[category as keyof typeof GEI_CATEGORIES]?.color || "#6b7280";
   };
 
   const SortIndicator = ({ col }: { col: SortKey }) => {
@@ -95,7 +90,7 @@ export default function TopGamesTable({ games }: Props) {
                 <td className="py-2 pr-3 font-mono text-xs tabular-nums text-stone-600">
                   {game.away_score}-{game.home_score}
                 </td>
-                <td className="py-2 pr-3 text-right font-semibold tabular-nums" style={{ color: getCategoryColor(game.category) }}>
+                <td className="py-2 pr-3 text-right font-semibold tabular-nums text-stone-900">
                   {game.gei.toFixed(2)}
                 </td>
                 <td className="py-2 pr-3 text-right font-mono text-xs tabular-nums text-stone-500">

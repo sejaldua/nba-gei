@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { TeamAggregate } from "@/lib/types";
+import { BASE_PATH } from "@/lib/basePath";
 import SeasonSelector from "@/components/SeasonSelector";
 import TeamRankings from "@/components/TeamRankings";
 
@@ -10,7 +11,7 @@ export default function TeamsPage() {
   const [selectedSeason, setSelectedSeason] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch("/data/gei_by_team.json")
+    fetch(`${BASE_PATH}/data/gei_by_team.json`)
       .then((r) => r.json())
       .then(setTeams);
   }, []);

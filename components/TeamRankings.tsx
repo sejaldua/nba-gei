@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { TeamAggregate } from "@/lib/types";
-import { GEI_CATEGORIES } from "@/lib/constants";
 
 interface Props {
   teams: TeamAggregate[];
@@ -82,7 +81,7 @@ export default function TeamRankings({ teams }: Props) {
               <td className="py-2 pr-3 font-medium text-stone-800">{team.team}</td>
               <td className="py-2 pr-3 text-stone-500 text-xs tabular-nums">{team.season}-{String(team.season + 1).slice(-2)}</td>
               <td className="py-2 pr-3 text-right text-stone-500 tabular-nums">{team.games_played}</td>
-              <td className="py-2 pr-3 text-right font-semibold tabular-nums" style={{ color: getGEIColor(team.median_gei) }}>
+              <td className="py-2 pr-3 text-right font-semibold tabular-nums text-stone-900">
                 {team.median_gei.toFixed(2)}
               </td>
               <td className="py-2 pr-3 text-right text-stone-600 tabular-nums">
@@ -91,10 +90,10 @@ export default function TeamRankings({ teams }: Props) {
               <td className="py-2 pr-3 text-right text-stone-500 tabular-nums">
                 {team.max_gei.toFixed(2)}
               </td>
-              <td className="py-2 pr-3 text-right tabular-nums" style={{ color: GEI_CATEGORIES.heart_pounder.color }}>
+              <td className="py-2 pr-3 text-right tabular-nums text-stone-600">
                 {team.heart_pounders}
               </td>
-              <td className="py-2 pr-3 text-right tabular-nums" style={{ color: GEI_CATEGORIES.thriller.color }}>
+              <td className="py-2 pr-3 text-right tabular-nums text-stone-600">
                 {team.thrillers}
               </td>
               <td className="py-2 pr-3 text-right text-stone-500 tabular-nums">
@@ -111,9 +110,3 @@ export default function TeamRankings({ teams }: Props) {
   );
 }
 
-function getGEIColor(gei: number): string {
-  if (gei > 8) return GEI_CATEGORIES.heart_pounder.color;
-  if (gei > 4) return GEI_CATEGORIES.thriller.color;
-  if (gei > 1) return GEI_CATEGORIES.average.color;
-  return GEI_CATEGORIES.dud.color;
-}

@@ -1,17 +1,15 @@
 "use client";
 
 import {
-  BarChart,
-  Bar,
-  Cell,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  ReferenceLine,
+  Legend,
 } from "recharts";
 import { Game } from "@/lib/types";
-import { GEI_CATEGORIES } from "@/lib/constants";
 
 interface Props {
   games: Game[];
@@ -19,41 +17,32 @@ interface Props {
 
 export default function GEIHistogram({ games }: Props) {
   const binSize = 0.5;
-  const maxGEI = Math.min(Math.ceil(Math.max(...games.map((g) => g.gei))), 20);
-  const bins: { range: string; count: number; midpoint: number }[] = [];
+  const maxGEI = Math.min(Math.ceil(Math.max(...games.map((g) => g.gei))), 18);
+
+  const games2024 = games.filter((g) => g.season === 2024);
+  const games2025 = games.filter((g) => g.season === 2025);
+
+  const bins: { gei: number; "2024-25": number; "2025-26": number }[] = [];
 
   for (let i = 0; i < maxGEI; i += binSize) {
-    const count = games.filter(
-      (g) => g.gei >= i && g.gei < i + binSize
-    ).length;
     bins.push({
-      range: `${i.toFixed(1)}`,
-      count,
-      midpoint: i + binSize / 2,
+      gei: i + binSize / 2,
+      "2024-25": games2024.filter((g) => g.gei >= i && g.gei < i + binSize).length,
+      "2025-26": games2025.filter((g) => g.gei >= i && g.gei < i + binSize).length,
     });
   }
 
-  const getBarColor = (midpoint: number) => {
-    if (midpoint > GEI_CATEGORIES.heart_pounder.threshold)
-      return GEI_CATEGORIES.heart_pounder.color;
-    if (midpoint > GEI_CATEGORIES.thriller.threshold)
-      return GEI_CATEGORIES.thriller.color;
-    if (midpoint > GEI_CATEGORIES.average.threshold)
-      return GEI_CATEGORIES.average.color;
-    return GEI_CATEGORIES.dud.color;
-  };
-
   return (
-    <div className="h-52 w-full">
+    <div className="h-60 w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={bins} margin={{ top: 5, right: 5, bottom: 20, left: 5 }}>
+        <LineChart data={bins} margin={{ top: 5, right: 5, bottom: 20, left: 5 }}>
           <XAxis
-            dataKey="range"
+            dataKey="gei"
             tick={{ fontSize: 9, fill: "#a8a29e" }}
-            interval={3}
             axisLine={{ stroke: "#d6d3d1", strokeWidth: 0.5 }}
             tickLine={false}
-            label={{ value: "GEI", position: "bottom", offset: 2, fontSize: 10, fill: "#a8a29e" }}
+            type="number"
+            domain={[0, maxGEI]}
           />
           <YAxis
             tick={{ fontSize: 9, fill: "#a8a29e" }}
@@ -64,18 +53,27 @@ export default function GEIHistogram({ games }: Props) {
           <Tooltip
             contentStyle={{ backgroundColor: "#fafaf9", border: "1px solid #d6d3d1", borderRadius: "4px", fontSize: "12px" }}
             labelStyle={{ color: "#78716c" }}
-            formatter={(value) => [String(value), "Games"]}
-            labelFormatter={(label) => `GEI: ${label}`}
+            labelFormatter={(v) => `GEI: ${Number(v).toFixed(1)}`}
           />
-          <ReferenceLine x="1.0" stroke="#d6d3d1" strokeDasharray="2 2" strokeWidth={0.5} />
-          <ReferenceLine x="4.0" stroke="#d97706" strokeDasharray="2 2" strokeWidth={0.5} />
-          <ReferenceLine x="8.0" stroke="#dc2626" strokeDasharray="2 2" strokeWidth={0.5} />
-          <Bar dataKey="count" radius={[1, 1, 0, 0]}>
-            {bins.map((entry, index) => (
-              <Cell key={index} fill={getBarColor(entry.midpoint)} />
-            ))}
-          </Bar>
-        </BarChart>
+          <Legend
+            wrapperStyle={{ fontSize: "11px", color: "#78716c", paddingTop: "8px" }}
+            iconType="plainline"
+          />
+          <Line
+            type="monotone"
+            dataKey="2024-25"
+            stroke="#1c1917"
+            strokeWidth={1.5}
+            dot={false}
+          />
+          <Line
+            type="monotone"
+            dataKey="2025-26"
+            stroke="#a8a29e"
+            strokeWidth={1.5}
+            dot={false}
+          />
+        </LineChart>
       </ResponsiveContainer>
     </div>
   );

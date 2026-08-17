@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import { WPPoint } from "@/lib/types";
 import { TEAM_COLORS } from "@/lib/constants";
+import { BASE_PATH } from "@/lib/basePath";
 
 interface Props {
   gameId: string;
@@ -32,7 +33,7 @@ export default function WinProbChart({ gameId, homeTeam, awayTeam }: Props) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`/data/wp_curves/${gameId}.json`)
+    fetch(`${BASE_PATH}/data/wp_curves/${gameId}.json`)
       .then((r) => {
         if (!r.ok) throw new Error("Not found");
         return r.json();
