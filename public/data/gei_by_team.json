@@ -13,6 +13,19 @@
     "duds": 0
   },
   {
+    "team": "ATL",
+    "season": 2025,
+    "games_played": 88,
+    "median_gei": 7.3,
+    "mean_gei": 7.41,
+    "max_gei": 14.49,
+    "min_gei": 0.94,
+    "heart_pounders": 39,
+    "thrillers": 34,
+    "average_games": 14,
+    "duds": 1
+  },
+  {
     "team": "BKN",
     "season": 2024,
     "games_played": 82,
@@ -24,6 +37,19 @@
     "thrillers": 27,
     "average_games": 13,
     "duds": 0
+  },
+  {
+    "team": "BKN",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 6.01,
+    "mean_gei": 6.17,
+    "max_gei": 14.38,
+    "min_gei": 0.54,
+    "heart_pounders": 28,
+    "thrillers": 25,
+    "average_games": 24,
+    "duds": 5
   },
   {
     "team": "BOS",
@@ -39,6 +65,19 @@
     "duds": 1
   },
   {
+    "team": "BOS",
+    "season": 2025,
+    "games_played": 89,
+    "median_gei": 7.15,
+    "mean_gei": 7.26,
+    "max_gei": 14.38,
+    "min_gei": 0.72,
+    "heart_pounders": 40,
+    "thrillers": 26,
+    "average_games": 21,
+    "duds": 2
+  },
+  {
     "team": "CHA",
     "season": 2024,
     "games_played": 82,
@@ -49,6 +88,19 @@
     "heart_pounders": 37,
     "thrillers": 25,
     "average_games": 19,
+    "duds": 1
+  },
+  {
+    "team": "CHA",
+    "season": 2025,
+    "games_played": 84,
+    "median_gei": 6.83,
+    "mean_gei": 7.39,
+    "max_gei": 14.17,
+    "min_gei": 0.98,
+    "heart_pounders": 33,
+    "thrillers": 34,
+    "average_games": 16,
     "duds": 1
   },
   {
@@ -65,6 +117,19 @@
     "duds": 0
   },
   {
+    "team": "CHI",
+    "season": 2025,
+    "games_played": 81,
+    "median_gei": 8.18,
+    "mean_gei": 8.02,
+    "max_gei": 14.08,
+    "min_gei": 0.55,
+    "heart_pounders": 42,
+    "thrillers": 29,
+    "average_games": 9,
+    "duds": 1
+  },
+  {
     "team": "CLE",
     "season": 2024,
     "games_played": 91,
@@ -76,6 +141,19 @@
     "thrillers": 25,
     "average_games": 25,
     "duds": 4
+  },
+  {
+    "team": "CLE",
+    "season": 2025,
+    "games_played": 100,
+    "median_gei": 8.0,
+    "mean_gei": 7.85,
+    "max_gei": 13.52,
+    "min_gei": 0.79,
+    "heart_pounders": 50,
+    "thrillers": 37,
+    "average_games": 12,
+    "duds": 1
   },
   {
     "team": "DAL",
@@ -91,6 +169,19 @@
     "duds": 2
   },
   {
+    "team": "DAL",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 7.75,
+    "mean_gei": 8.09,
+    "max_gei": 14.79,
+    "min_gei": 1.8,
+    "heart_pounders": 38,
+    "thrillers": 31,
+    "average_games": 13,
+    "duds": 0
+  },
+  {
     "team": "DEN",
     "season": 2024,
     "games_played": 96,
@@ -102,6 +193,19 @@
     "thrillers": 40,
     "average_games": 12,
     "duds": 0
+  },
+  {
+    "team": "DEN",
+    "season": 2025,
+    "games_played": 88,
+    "median_gei": 8.19,
+    "mean_gei": 8.42,
+    "max_gei": 16.18,
+    "min_gei": 0.52,
+    "heart_pounders": 46,
+    "thrillers": 29,
+    "average_games": 12,
+    "duds": 1
   },
   {
     "team": "DET",
@@ -117,6 +221,19 @@
     "duds": 0
   },
   {
+    "team": "DET",
+    "season": 2025,
+    "games_played": 96,
+    "median_gei": 7.64,
+    "mean_gei": 7.73,
+    "max_gei": 14.29,
+    "min_gei": 0.64,
+    "heart_pounders": 44,
+    "thrillers": 35,
+    "average_games": 15,
+    "duds": 2
+  },
+  {
     "team": "GSW",
     "season": 2024,
     "games_played": 95,
@@ -127,6 +244,19 @@
     "heart_pounders": 49,
     "thrillers": 32,
     "average_games": 14,
+    "duds": 0
+  },
+  {
+    "team": "GSW",
+    "season": 2025,
+    "games_played": 84,
+    "median_gei": 8.45,
+    "mean_gei": 8.15,
+    "max_gei": 14.84,
+    "min_gei": 2.04,
+    "heart_pounders": 46,
+    "thrillers": 25,
+    "average_games": 13,
     "duds": 0
   },
   {
@@ -143,6 +273,19 @@
     "duds": 0
   },
   {
+    "team": "HOU",
+    "season": 2025,
+    "games_played": 88,
+    "median_gei": 8.27,
+    "mean_gei": 8.18,
+    "max_gei": 16.18,
+    "min_gei": 1.11,
+    "heart_pounders": 46,
+    "thrillers": 28,
+    "average_games": 14,
+    "duds": 0
+  },
+  {
     "team": "IND",
     "season": 2024,
     "games_played": 104,
@@ -156,6 +299,19 @@
     "duds": 0
   },
   {
+    "team": "IND",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 6.76,
+    "mean_gei": 7.42,
+    "max_gei": 15.52,
+    "min_gei": 0.64,
+    "heart_pounders": 37,
+    "thrillers": 31,
+    "average_games": 13,
+    "duds": 1
+  },
+  {
     "team": "LAC",
     "season": 2024,
     "games_played": 89,
@@ -166,6 +322,19 @@
     "heart_pounders": 40,
     "thrillers": 30,
     "average_games": 18,
+    "duds": 1
+  },
+  {
+    "team": "LAC",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 7.28,
+    "mean_gei": 7.54,
+    "max_gei": 15.52,
+    "min_gei": 0.97,
+    "heart_pounders": 36,
+    "thrillers": 29,
+    "average_games": 16,
     "duds": 1
   },
   {
@@ -182,6 +351,19 @@
     "duds": 0
   },
   {
+    "team": "LAL",
+    "season": 2025,
+    "games_played": 92,
+    "median_gei": 7.23,
+    "mean_gei": 7.33,
+    "max_gei": 14.71,
+    "min_gei": 0.8,
+    "heart_pounders": 41,
+    "thrillers": 35,
+    "average_games": 14,
+    "duds": 2
+  },
+  {
     "team": "MEM",
     "season": 2024,
     "games_played": 88,
@@ -192,6 +374,19 @@
     "heart_pounders": 42,
     "thrillers": 26,
     "average_games": 20,
+    "duds": 0
+  },
+  {
+    "team": "MEM",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 8.35,
+    "mean_gei": 8.11,
+    "max_gei": 15.13,
+    "min_gei": 1.11,
+    "heart_pounders": 45,
+    "thrillers": 21,
+    "average_games": 16,
     "duds": 0
   },
   {
@@ -208,6 +403,19 @@
     "duds": 1
   },
   {
+    "team": "MIA",
+    "season": 2025,
+    "games_played": 83,
+    "median_gei": 8.46,
+    "mean_gei": 8.01,
+    "max_gei": 16.18,
+    "min_gei": 1.35,
+    "heart_pounders": 46,
+    "thrillers": 25,
+    "average_games": 12,
+    "duds": 0
+  },
+  {
     "team": "MIL",
     "season": 2024,
     "games_played": 88,
@@ -218,6 +426,19 @@
     "heart_pounders": 43,
     "thrillers": 31,
     "average_games": 13,
+    "duds": 1
+  },
+  {
+    "team": "MIL",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 7.59,
+    "mean_gei": 7.45,
+    "max_gei": 14.17,
+    "min_gei": 0.72,
+    "heart_pounders": 40,
+    "thrillers": 22,
+    "average_games": 19,
     "duds": 1
   },
   {
@@ -234,6 +455,19 @@
     "duds": 0
   },
   {
+    "team": "MIN",
+    "season": 2025,
+    "games_played": 94,
+    "median_gei": 8.31,
+    "mean_gei": 8.03,
+    "max_gei": 14.54,
+    "min_gei": 0.62,
+    "heart_pounders": 50,
+    "thrillers": 27,
+    "average_games": 16,
+    "duds": 1
+  },
+  {
     "team": "NOP",
     "season": 2024,
     "games_played": 82,
@@ -244,6 +478,19 @@
     "heart_pounders": 41,
     "thrillers": 20,
     "average_games": 20,
+    "duds": 1
+  },
+  {
+    "team": "NOP",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 8.59,
+    "mean_gei": 8.11,
+    "max_gei": 14.79,
+    "min_gei": 0.93,
+    "heart_pounders": 45,
+    "thrillers": 21,
+    "average_games": 15,
     "duds": 1
   },
   {
@@ -260,6 +507,19 @@
     "duds": 0
   },
   {
+    "team": "NYK",
+    "season": 2025,
+    "games_played": 102,
+    "median_gei": 7.62,
+    "mean_gei": 7.34,
+    "max_gei": 15.53,
+    "min_gei": 0.47,
+    "heart_pounders": 47,
+    "thrillers": 33,
+    "average_games": 17,
+    "duds": 5
+  },
+  {
     "team": "OKC",
     "season": 2024,
     "games_played": 105,
@@ -271,6 +531,19 @@
     "thrillers": 31,
     "average_games": 30,
     "duds": 4
+  },
+  {
+    "team": "OKC",
+    "season": 2025,
+    "games_played": 97,
+    "median_gei": 6.46,
+    "mean_gei": 6.45,
+    "max_gei": 13.65,
+    "min_gei": 0.3,
+    "heart_pounders": 34,
+    "thrillers": 31,
+    "average_games": 25,
+    "duds": 7
   },
   {
     "team": "ORL",
@@ -286,6 +559,19 @@
     "duds": 0
   },
   {
+    "team": "ORL",
+    "season": 2025,
+    "games_played": 91,
+    "median_gei": 8.86,
+    "mean_gei": 8.52,
+    "max_gei": 14.71,
+    "min_gei": 0.67,
+    "heart_pounders": 51,
+    "thrillers": 29,
+    "average_games": 10,
+    "duds": 1
+  },
+  {
     "team": "PHI",
     "season": 2024,
     "games_played": 82,
@@ -297,6 +583,19 @@
     "thrillers": 26,
     "average_games": 15,
     "duds": 1
+  },
+  {
+    "team": "PHI",
+    "season": 2025,
+    "games_played": 94,
+    "median_gei": 8.79,
+    "mean_gei": 7.98,
+    "max_gei": 13.72,
+    "min_gei": 1.01,
+    "heart_pounders": 50,
+    "thrillers": 23,
+    "average_games": 21,
+    "duds": 0
   },
   {
     "team": "PHX",
@@ -312,6 +611,19 @@
     "duds": 0
   },
   {
+    "team": "PHX",
+    "season": 2025,
+    "games_played": 88,
+    "median_gei": 7.95,
+    "mean_gei": 7.8,
+    "max_gei": 14.89,
+    "min_gei": 0.71,
+    "heart_pounders": 44,
+    "thrillers": 29,
+    "average_games": 14,
+    "duds": 1
+  },
+  {
     "team": "POR",
     "season": 2024,
     "games_played": 82,
@@ -323,6 +635,19 @@
     "thrillers": 33,
     "average_games": 12,
     "duds": 0
+  },
+  {
+    "team": "POR",
+    "season": 2025,
+    "games_played": 88,
+    "median_gei": 8.7,
+    "mean_gei": 8.16,
+    "max_gei": 14.71,
+    "min_gei": 0.65,
+    "heart_pounders": 49,
+    "thrillers": 22,
+    "average_games": 16,
+    "duds": 1
   },
   {
     "team": "SAC",
@@ -338,6 +663,19 @@
     "duds": 0
   },
   {
+    "team": "SAC",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 6.97,
+    "mean_gei": 7.07,
+    "max_gei": 15.13,
+    "min_gei": 0.53,
+    "heart_pounders": 33,
+    "thrillers": 28,
+    "average_games": 19,
+    "duds": 2
+  },
+  {
     "team": "SAS",
     "season": 2024,
     "games_played": 82,
@@ -349,6 +687,19 @@
     "thrillers": 29,
     "average_games": 14,
     "duds": 0
+  },
+  {
+    "team": "SAS",
+    "season": 2025,
+    "games_played": 106,
+    "median_gei": 7.83,
+    "mean_gei": 7.54,
+    "max_gei": 14.89,
+    "min_gei": 0.53,
+    "heart_pounders": 51,
+    "thrillers": 28,
+    "average_games": 26,
+    "duds": 1
   },
   {
     "team": "TOR",
@@ -364,6 +715,19 @@
     "duds": 1
   },
   {
+    "team": "TOR",
+    "season": 2025,
+    "games_played": 89,
+    "median_gei": 7.63,
+    "mean_gei": 7.69,
+    "max_gei": 14.13,
+    "min_gei": 1.78,
+    "heart_pounders": 42,
+    "thrillers": 32,
+    "average_games": 15,
+    "duds": 0
+  },
+  {
     "team": "UTA",
     "season": 2024,
     "games_played": 82,
@@ -377,6 +741,19 @@
     "duds": 1
   },
   {
+    "team": "UTA",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 7.45,
+    "mean_gei": 7.02,
+    "max_gei": 14.16,
+    "min_gei": 0.3,
+    "heart_pounders": 38,
+    "thrillers": 17,
+    "average_games": 22,
+    "duds": 5
+  },
+  {
     "team": "WAS",
     "season": 2024,
     "games_played": 82,
@@ -388,5 +765,18 @@
     "thrillers": 27,
     "average_games": 24,
     "duds": 3
+  },
+  {
+    "team": "WAS",
+    "season": 2025,
+    "games_played": 82,
+    "median_gei": 4.0,
+    "mean_gei": 5.49,
+    "max_gei": 13.98,
+    "min_gei": 0.73,
+    "heart_pounders": 23,
+    "thrillers": 18,
+    "average_games": 37,
+    "duds": 4
   }
 ]

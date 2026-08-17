@@ -31,103 +31,69 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-12">
-      <section className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">
-          Game Excitement Index
+    <div className="space-y-14">
+      <section className="pt-8 space-y-3">
+        <h1 className="text-3xl font-semibold tracking-tight leading-tight text-stone-900">
+          How exciting was every NBA game?
         </h1>
-        <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl">
-          Quantifying how exciting NBA games are by measuring the total
-          volatility in win probability throughout each game.
+        <p className="text-[15px] text-stone-500 max-w-lg leading-relaxed">
+          Measuring total win probability volatility across {filtered.length.toLocaleString()} games
+          to find the ones worth rewatching.
         </p>
       </section>
 
-      <section className="space-y-4 max-w-3xl">
-        <h2 className="text-xl font-semibold">Methodology</h2>
-        <div className="text-sm text-gray-700 dark:text-gray-300 space-y-3">
+      <section className="space-y-3">
+        <h2 className="text-xs font-medium uppercase tracking-wide text-stone-400">Methodology</h2>
+        <div className="text-sm text-stone-600 space-y-3 leading-relaxed">
           <p>
-            Game Excitement Index (GEI) captures how much a game&apos;s outcome
-            swung back and forth. It sums the absolute changes in win
-            probability between consecutive plays, normalized to a standard
-            48-minute game:
+            GEI sums the absolute changes in win probability between consecutive
+            plays, normalized to a standard 48-minute game:
           </p>
-          <div className="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 font-mono text-center text-base">
+          <div className="bg-white/60 rounded-lg px-4 py-3 font-mono text-sm text-center border border-stone-200">
             GEI = (2880 / t) &times; &Sigma; |p<sub>i</sub> &minus; p<sub>i-1</sub>|
           </div>
-          <p>
-            Where <span className="font-mono text-xs">t</span> is the game
-            length in seconds,{" "}
-            <span className="font-mono text-xs">p<sub>i</sub></span> is the
-            home team&apos;s win probability at play{" "}
-            <span className="font-mono text-xs">i</span>. Normalizing by game
-            length prevents sloppy overtime games from ranking artificially
-            high.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+          <div className="flex gap-2 pt-1 flex-wrap">
             {Object.entries(GEI_CATEGORIES).map(([key, cat]) => (
-              <div
+              <span
                 key={key}
-                className="rounded-md border border-gray-200 dark:border-gray-800 p-3 text-center"
+                className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-white/60 border border-stone-200 text-stone-600"
               >
-                <div
-                  className="text-xs font-semibold mb-1"
-                  style={{ color: cat.color }}
-                >
-                  {cat.label}
-                </div>
-                <div className="text-xs text-gray-500">
-                  GEI {key === "dud" ? "< 1" : `> ${cat.threshold}`}
-                </div>
-              </div>
+                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: cat.color }} />
+                {cat.label}
+                <span className="text-stone-400">
+                  {key === "dud" ? "<1" : `>${cat.threshold}`}
+                </span>
+              </span>
             ))}
           </div>
         </div>
       </section>
 
       <section className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-semibold">GEI Distribution</h2>
-          <SeasonSelector
-            selected={selectedSeason}
-            onChange={setSelectedSeason}
-          />
+        <div className="flex items-end justify-between">
+          <h2 className="text-xs font-medium uppercase tracking-wide text-stone-400">Distribution</h2>
+          <SeasonSelector selected={selectedSeason} onChange={setSelectedSeason} />
         </div>
 
         {filtered.length > 0 && <GEIHistogram games={filtered} />}
 
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 pt-2">
-          <StatCard label="Games" value={stats.total} />
-          <StatCard label="Mean GEI" value={stats.mean} />
-          <StatCard
-            label="Heart Pounders"
-            value={stats.heartPounders}
-            color="#dc2626"
-          />
-          <StatCard
-            label="Thrillers"
-            value={stats.thrillers}
-            color="#f59e0b"
-          />
-          <StatCard label="Duds" value={stats.duds} color="#374151" />
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 pt-2">
+          <Stat label="Games" value={stats.total.toLocaleString()} />
+          <Stat label="Mean GEI" value={stats.mean} />
+          <Stat label="Heart Pounders" value={stats.heartPounders} accent="#dc2626" />
+          <Stat label="Thrillers" value={stats.thrillers} accent="#d97706" />
+          <Stat label="Duds" value={stats.duds} />
         </div>
       </section>
     </div>
   );
 }
 
-function StatCard({
-  label,
-  value,
-  color,
-}: {
-  label: string;
-  value: string | number;
-  color?: string;
-}) {
+function Stat({ label, value, accent }: { label: string; value: string | number; accent?: string }) {
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4">
-      <div className="text-xs text-gray-500 mb-1">{label}</div>
-      <div className="text-2xl font-bold" style={color ? { color } : undefined}>
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-stone-400 mb-0.5">{label}</div>
+      <div className="text-xl font-semibold tabular-nums" style={accent ? { color: accent } : undefined}>
         {value}
       </div>
     </div>

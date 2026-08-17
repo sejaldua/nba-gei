@@ -9,13 +9,13 @@ interface Props {
 
 export default function SeasonSelector({ selected, onChange }: Props) {
   return (
-    <div className="flex gap-2 text-sm">
+    <div className="flex gap-1 text-xs">
       <button
         onClick={() => onChange(null)}
-        className={`px-3 py-1 rounded-md transition-colors ${
+        className={`px-2.5 py-1 rounded-md transition-colors ${
           selected === null
-            ? "bg-blue-600 text-white"
-            : "bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+            ? "bg-stone-800 text-white"
+            : "text-stone-500 hover:text-stone-800"
         }`}
       >
         All
@@ -24,10 +24,10 @@ export default function SeasonSelector({ selected, onChange }: Props) {
         <button
           key={s.value}
           onClick={() => onChange(s.value)}
-          className={`px-3 py-1 rounded-md transition-colors ${
+          className={`px-2.5 py-1 rounded-md transition-colors ${
             selected === s.value
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+              ? "bg-stone-800 text-white"
+              : "text-stone-500 hover:text-stone-800"
           }`}
         >
           {s.label}

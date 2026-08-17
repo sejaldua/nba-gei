@@ -20,11 +20,11 @@ export default function TeamsPage() {
     : teams;
 
   return (
-    <div className="space-y-8">
-      <section className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">Team Rankings</h1>
-        <p className="text-gray-500 dark:text-gray-400">
-          Which teams produce the most exciting basketball? Ranked by median GEI.
+    <div className="space-y-8 pt-4">
+      <section>
+        <h1 className="text-2xl font-semibold tracking-tight">Teams</h1>
+        <p className="text-sm text-stone-500 mt-1">
+          Which teams produce the most exciting basketball?
         </p>
       </section>
 
@@ -33,7 +33,7 @@ export default function TeamsPage() {
       {filtered.length > 0 ? (
         <TeamRankings teams={filtered} />
       ) : (
-        <p className="text-gray-500 py-8 text-center">No data loaded yet.</p>
+        <p className="text-stone-400 py-12 text-center text-sm">Loading teams...</p>
       )}
     </div>
   );
