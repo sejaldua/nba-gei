@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Game } from "@/lib/types";
 import { BASE_PATH } from "@/lib/basePath";
 import GEIHistogram from "@/components/GEIHistogram";
+import GEITimeline from "@/components/GEITimeline";
+import { SEASONS } from "@/lib/constants";
 
 export default function Home() {
   const [games, setGames] = useState<Game[]>([]);
@@ -78,7 +80,33 @@ export default function Home() {
           <Stat label="Median GEI" value={median} />
         </div>
       </section>
+
+      {games.length > 0 && (
+        <TimelineSection games={games} />
+      )}
     </div>
+  );
+}
+
+function TimelineSection({ games }: { games: Game[] }) {
+  const [season, setSeason] = useState(SEASONS[0].value);
+
+  return (
+    <section className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h2 className="text-xs font-medium uppercase tracking-wide text-stone-400">Excitement by Date</h2>
+        <select
+          value={season}
+          onChange={(e) => setSeason(Number(e.target.value))}
+          className="text-xs bg-transparent border border-stone-300 rounded px-2 py-1 text-stone-600 focus:outline-none focus:border-stone-400"
+        >
+          {SEASONS.map((s) => (
+            <option key={s.value} value={s.value}>{s.label}</option>
+          ))}
+        </select>
+      </div>
+      <GEITimeline games={games} season={season} />
+    </section>
   );
 }
 

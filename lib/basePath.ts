@@ -1,1 +1,1 @@
-export const BASE_PATH = process.env.NODE_ENV === "production" ? "/nba-gei" : "";
+export const BASE_PATH = "/nba-gei";

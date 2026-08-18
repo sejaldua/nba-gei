@@ -8,8 +8,10 @@ import {
   Tooltip,
   ResponsiveContainer,
   Legend,
+  ReferenceLine,
 } from "recharts";
 import { Game } from "@/lib/types";
+import { GEI_CATEGORIES } from "@/lib/constants";
 
 interface Props {
   games: Game[];
@@ -54,6 +56,27 @@ export default function GEIHistogram({ games }: Props) {
             contentStyle={{ backgroundColor: "#fafaf9", border: "1px solid #d6d3d1", borderRadius: "4px", fontSize: "12px" }}
             labelStyle={{ color: "#78716c" }}
             labelFormatter={(v) => `GEI: ${Number(v).toFixed(1)}`}
+          />
+          <ReferenceLine
+            x={GEI_CATEGORIES.heart_pounder.threshold}
+            stroke={GEI_CATEGORIES.heart_pounder.color}
+            strokeDasharray="4 3"
+            strokeWidth={1}
+            label={{ value: "Heart Pounder", position: "top", fontSize: 9, fill: GEI_CATEGORIES.heart_pounder.color }}
+          />
+          <ReferenceLine
+            x={GEI_CATEGORIES.thriller.threshold}
+            stroke={GEI_CATEGORIES.thriller.color}
+            strokeDasharray="4 3"
+            strokeWidth={1}
+            label={{ value: "Thriller", position: "top", fontSize: 9, fill: GEI_CATEGORIES.thriller.color }}
+          />
+          <ReferenceLine
+            x={GEI_CATEGORIES.average.threshold}
+            stroke={GEI_CATEGORIES.average.color}
+            strokeDasharray="4 3"
+            strokeWidth={1}
+            label={{ value: "Dud", position: "top", fontSize: 9, fill: GEI_CATEGORIES.average.color }}
           />
           <Legend
             wrapperStyle={{ fontSize: "11px", color: "#78716c", paddingTop: "8px" }}
